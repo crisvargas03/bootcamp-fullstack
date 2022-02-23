@@ -5,8 +5,8 @@ const Content = ({ allParts }) => {
   console.log(allParts);
   return (
     <div>
-      {allParts.map((c) => (
-        <Part part={c.name} exercise={c.exercises} />
+      {allParts.map((c, index) => (
+        <Part key={index + 1} part={c.name} exercise={c.exercises} />
       ))}
     </div>
   );
