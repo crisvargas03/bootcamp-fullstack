@@ -6,35 +6,32 @@ import "./index.css";
 import Totals from "./Totals";
 
 const App = () => {
-  const course = "Half Stack application development";
-  const part1 = "Fundamentals of React";
-  const exercises1 = 10;
-  const part2 = "Using props to pass data";
-  const exercises2 = 7;
-  const part3 = "State of a component";
-  const exercises3 = 14;
-
-  const partes = {
-    p1: "Fundamentals of React",
-    p2: "Using props to pass data",
-    p3: "State of a component",
+  const course = {
+    name: "Half Stack application development",
+    parts: [
+      {
+        name: "Fundamentals of React",
+        exercises: 10,
+      },
+      {
+        name: "Using props to pass data",
+        exercises: 7,
+      },
+      {
+        name: "State of a component",
+        exercises: 14,
+      },
+    ],
   };
 
-  const ejercicios = {
-    e1: 10,
-    e2: 7,
-    e3: 14,
-  };
-
-  //TODO: Make the 1.2 execise, refactoring the Content component. IDEA: A component that recive a obj.
   return (
     <div>
-      <Header course={course} />
-      <Content partes={partes} ejercicios={ejercicios} />
+      <Header course={course.name} />
+      <Content allParts={course.parts} />
       <Totals
-        exercises1={exercises1}
-        exercises2={exercises2}
-        exercises3={exercises3}
+        exercises1={course.parts[0].exercises}
+        exercises2={course.parts[1].exercises}
+        exercises3={course.parts[2].exercises}
       />
     </div>
   );
