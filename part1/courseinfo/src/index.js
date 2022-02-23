@@ -14,13 +14,23 @@ const App = () => {
   const part3 = "State of a component";
   const exercises3 = 14;
 
+  const partes = {
+    p1: "Fundamentals of React",
+    p2: "Using props to pass data",
+    p3: "State of a component",
+  };
+
+  const ejercicios = {
+    e1: 10,
+    e2: 7,
+    e3: 14,
+  };
+
   //TODO: Make the 1.2 execise, refactoring the Content component. IDEA: A component that recive a obj.
   return (
     <div>
       <Header course={course} />
-      <Content part={part1} exercise={exercises1} />
-      <Content part={part2} exercise={exercises2} />
-      <Content part={part3} exercise={exercises3} />
+      <Content partes={partes} ejercicios={ejercicios} />
       <Totals
         exercises1={exercises1}
         exercises2={exercises2}
