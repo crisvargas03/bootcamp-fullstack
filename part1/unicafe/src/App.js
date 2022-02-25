@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import Statistics from "./Statistics";
 
 const App = () => {
   // save clicks of each button to its own state
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+
+  const isEmpty = good + neutral + bad === 0;
+  console.log(isEmpty);
 
   const handleGood = () => {
     setGood(good + 1);
@@ -24,10 +28,12 @@ const App = () => {
       <button onClick={handleGood}>good</button>
       <button onClick={handleNeutral}>neutral</button>
       <button onClick={handleBad}>bad</button>
-      <h2>Statistics</h2>
-      <p>good: {good}</p>
-      <p>neutral: {neutral}</p>
-      <p>bad: {bad}</p>
+
+      {isEmpty ? (
+        <h3>No FeedBack</h3>
+      ) : (
+        <Statistics good={good} neutral={neutral} bad={bad} />
+      )}
     </div>
   );
 };
