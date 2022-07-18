@@ -15,7 +15,7 @@ const App = () => {
   };
 
   const handleNeutral = () => {
-    setNeutral(neutral + 1);
+    setNeutral(neutral + 2);
   };
 
   const handleBad = () => {
